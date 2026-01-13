@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+aigov_out/
+dist/
+build/
+*.egg-info/

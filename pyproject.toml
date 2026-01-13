@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aigov-scan"
+version = "0.1.0"
+description = "AI governance dataset scanner: licenses + provenance + PII -> evidence artifacts + SARIF for GitHub Code Scanning."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "neuroarchitectlab", email = "opensource@neuroarchitectlab.com" }]
+dependencies = [
+  "pyyaml>=6.0.1",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.3",
+]
+
+[project.scripts]
+aigov = "aigov_scan.cli:main"
+
+[tool.setuptools]
+# IMPORTANT: tell setuptools exactly what to package
+packages = ["aigov_scan"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

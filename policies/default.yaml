@@ -1,0 +1,7 @@
+profile: default.v1
+rules:
+  - id: no-unknown-license
+    when:
+      license.spdx: "Unknown"
+    severity: high
+    action: fail
